@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+
+# PyInstaller
+build/
+dist/
+*.spec
+
+# WEFREE specific
+config.json
+certs/
+server.log
+server_err.log
+test_storage/
+debug_access.py
+tests/
