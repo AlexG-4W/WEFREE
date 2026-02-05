@@ -1,34 +1,49 @@
-# WEFREE - Инструкция по использованию
+WEFREE - Portable Secure File Server
 
-WEFREE — это портативный защищённый веб-сервер для Windows, который позволяет получить удалённый доступ к файлам в текущей папке.
+**WEFREE** is a lightweight, portable Windows application that turns any folder into a secure, encrypted web server for remote file access. 
 
-## 1. Подготовка и запуск
-1. Поместите файл `WEFREE.exe` в папку, которой хотите поделиться.
-2. Запустите `WEFREE.exe`.
-3. При первом запуске:
-   - Будет создан файл `config.json`.
-   - Будет создана папка `certs/` с самоподписанными SSL-сертификатами.
-   - Сервер по умолчанию запустится на порту `5000` с паролем `admin123`.
+## Key Features
+- **Portable**: Run it from any folder as a single `.exe` file without installation.
+- **Secure**: Forced HTTPS/SSL encryption for all data transfers.
+- **Protected**: Mandatory password authentication to access your files.
+- **File Management**: 
+    - Browse files and directories.
+    - Download files.
+    - Upload files directly to the server.
+- **Safe**: Built-in protection against Directory Traversal attacks.
 
-## 2. Доступ через браузер
-- Введите в браузере: `https://localhost:5000` (или IP вашего компьютера).
-- **Важно:** Так как сертификат самоподписанный, браузер покажет предупреждение о безопасности. Нажмите "Дополнительно" -> "Перейти на сайт (небезопасно)".
+## How to Use
+1.  Place `WEFREE.exe` into the folder you want to share.
+2.  Run `WEFREE.exe`.
+3.  On the first run, it will automatically:
+    - Create a `config.json` file.
+    - Generate self-signed SSL certificates in the `certs/` folder.
+    - Start the server on port `5000` with the default password: `admin123`.
 
-## 3. Настройка пароля
-Откройте `config.json` и измените параметры, если нужно. Чтобы сменить пароль:
-- В текущей версии пароль задается при первом запуске. Чтобы установить свой хеш, используйте `werkzeug.security.generate_password_hash`.
-- *Совет:* Для простоты можно удалить `config.json`, изменить пароль в коде `app.py` перед сборкой и запустить снова.
+## Accessing the Server
+- Open your browser and go to: `https://localhost:5000` (or use your computer's local IP address).
+- **Security Warning**: Since the app uses a self-signed certificate, your browser will show a "Your connection is not private" warning. 
+    - Click **Advanced** -> **Proceed to localhost (unsafe)**.
+- Log in using the password from `config.json` (Default: `admin123`).
 
-## 4. Доступ из интернета
-Чтобы сервер был доступен вне локальной сети:
-1. **Проброс портов (Port Forwarding):** Настройте ваш роутер так, чтобы он перенаправлял внешний трафик (например, порт 5000) на локальный IP вашего компьютера (порт 5000).
-2. **Ngrok (Альтернатива):** Если у вас нет доступа к роутеру, используйте утилиту `ngrok`:
-   `ngrok http 5000` (хотя WEFREE использует HTTPS, ngrok создаст свой туннель).
-3. **Белый IP:** Если у вас есть статический внешний IP, используйте его.
+## Configuration
+Open `config.json` to customize the following settings:
+- `password_hash`: Securely stored password.
+- `port`: The port the server runs on (Default: 5000).
+- `allow_uploads`: Set to `true` or `false`.
 
-## 5. Сборка из исходников
-Если вы хотите собрать `.exe` самостоятельно:
-1. Установите Python 3.10+.
-2. Установите зависимости: `pip install -r requirements.txt`.
-3. Установите PyInstaller: `pip install pyinstaller`.
-4. Запустите сборку: `python build.py`.
+## Remote Access (Over the Internet)
+To access your files from outside your local network:
+1.  **Port Forwarding**: Configure your router to forward port `5000` to your computer's local IP.
+2.  **Tunneling Services**: Use tools like [ngrok](https://ngrok.com/) or [Tailscale](https://tailscale.com/) if you don't have access to router settings.
+
+## Build from Source
+If you want to build the executable yourself:
+1.  Install Python 3.10+.
+2.  Install dependencies: `pip install -r requirements.txt`.
+3.  Install PyInstaller: `pip install pyinstaller`.
+4.  Run the build script: `python build.py`.
+5.  Find your app in the `dist/` directory.
+
+## License
+Distributed under the MIT License. See `LICENSE` for more information.
