@@ -1,4 +1,4 @@
-WEFREE - Portable Secure File Server
+# WEFREE - Portable Secure File Server
 
 **WEFREE** is a lightweight, portable Windows application that turns any folder into a secure, encrypted web server for remote file access. 
 
