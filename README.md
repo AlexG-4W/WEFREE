@@ -1,3 +1,26 @@
+What's new in 1.11
+
+Impr![scr1](https://github.com/user-attachments/assets/5328f16e-47ab-4c34-8d86-b7e8fc801b40)
+ovements![scr serv](https://github.com/user-attachments/assets/65d8d553-e115-490c-94fa-95e07f97606d)
+
+Added icons to settings sections.
+Markdown links are now supported in text and list properties. Internal links are automatically updated when the destination file is moved or renamed.
+Daily notes: The daily note format can be selected from a list of predefined formats.
+Attempting to rename a file to include unsafe characters (such as '#' or ']') will only result in a warning.
+When importing files (e.g. via drag and drop), Obsidian now automatically strips out invalid characters from the filename.
+Added a "Copy path" submenu to the file context menu.
+macOS: Toggles and sliders are now styled to match their native counterparts.
+New setting Files & links › Default file to open. Choose between "Last opened files", "New note", "Specific note", or "Daily note". If you were previously using Daily notes option to "Open daily note on startup", be sure to update your vault to use this setting instead.
+New "Keychain" settings section for storing plugin secrets. Plugin API is coming soon.
+When text is selected, pasting a URL into the editor will convert the selection into a Markdown link using the URL (e.g. [selected text](pasted URL)).
+New setting: Community Plugins › Automatically check for plugin updates. Obsidian will check for plugin updates in the background every 3 days, or after the app updates.
+URI: new, open, and daily URI actions now support a new paneType param.
+Param	Description
+paneType=tab	Open in a new tab
+paneType=split	Open in a new tab group
+paneType=window	Open in a pop-out window (Desktop only)
+Added new "Copy current file path from system root" command.
+
 # WEFREE - Portable Secure File Server
 
 **WEFREE** is a lightweight, portable Windows application that turns any folder into a secure, encrypted web server for remote file access. 
