@@ -11,9 +11,9 @@
 
   ---
 
+![scr serv](https://github.com/user-attachments/assets/918baddd-90fd-4f0f-b1b9-c6c831756333)
 
 ![scr serv](https://github.com/user-attachments/assets/842a4b77-4a9e-49f1-ba30-0284e717ff2f)
-![scr1](https://github.com/user-attachments/assets/a8eca84a-6bca-4758-8bf7-b1f0a8f93ca6)
 
   🌟 Key Features
 
