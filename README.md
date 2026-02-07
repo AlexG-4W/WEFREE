@@ -12,6 +12,8 @@
   ---
 
   🌟 Key Features
+![scr serv](https://github.com/user-attachments/assets/842a4b77-4a9e-49f1-ba30-0284e717ff2f)
+![scr1](https://github.com/user-attachments/assets/a8eca84a-6bca-4758-8bf7-b1f0a8f93ca6)
 
 
    - Zero-Install Portability: Run as a single .exe file from any directory. No installation required.
