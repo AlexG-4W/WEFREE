@@ -1,8 +1,8 @@
 What's new in 1.11
 
-Impr![scr1](https://github.com/user-attachments/assets/5328f16e-47ab-4c34-8d86-b7e8fc801b40)
-ovements![scr serv](https://github.com/user-attachments/assets/65d8d553-e115-490c-94fa-95e07f97606d)
-
+![scr1](https://github.com/user-attachments/assets/5328f16e-47ab-4c34-8d86-b7e8fc801b40)
+![scr serv](https://github.com/user-attachments/assets/65d8d553-e115-490c-94fa-95e07f97606d)
+Improvements
 Added icons to settings sections.
 Markdown links are now supported in text and list properties. Internal links are automatically updated when the destination file is moved or renamed.
 Daily notes: The daily note format can be selected from a list of predefined formats.
