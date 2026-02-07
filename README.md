@@ -1,74 +1,87 @@
-What's new in 1.11
+ WEFREE - Portable Secure File Server
 
-![scr1](https://github.com/user-attachments/assets/5328f16e-47ab-4c34-8d86-b7e8fc801b40)
-![scr serv](https://github.com/user-attachments/assets/65d8d553-e115-490c-94fa-95e07f97606d)
 
-Improvements
+  !License (https://img.shields.io/badge/license-MIT-blue.svg)
+  !Python (https://img.shields.io/badge/python-3.10%2B-blue.svg)
+  !Platform (https://img.shields.io/badge/platform-windows-lightgrey.svg)
 
-Added icons to settings sections.
-Markdown links are now supported in text and list properties. Internal links are automatically updated when the destination file is moved or renamed.
-Daily notes: The daily note format can be selected from a list of predefined formats.
-Attempting to rename a file to include unsafe characters (such as '#' or ']') will only result in a warning.
-When importing files (e.g. via drag and drop), Obsidian now automatically strips out invalid characters from the filename.
-Added a "Copy path" submenu to the file context menu.
-macOS: Toggles and sliders are now styled to match their native counterparts.
-New setting Files & links › Default file to open. Choose between "Last opened files", "New note", "Specific note", or "Daily note". If you were previously using Daily notes option to "Open daily note on startup", be sure to update your vault to use this setting instead.
-New "Keychain" settings section for storing plugin secrets. Plugin API is coming soon.
-When text is selected, pasting a URL into the editor will convert the selection into a Markdown link using the URL (e.g. [selected text](pasted URL)).
-New setting: Community Plugins › Automatically check for plugin updates. Obsidian will check for plugin updates in the background every 3 days, or after the app updates.
-URI: new, open, and daily URI actions now support a new paneType param.
-Param	Description
-paneType=tab	Open in a new tab
-paneType=split	Open in a new tab group
-paneType=window	Open in a pop-out window (Desktop only)
-Added new "Copy current file path from system root" command.
 
-# WEFREE - Portable Secure File Server
+  WEFREE is a lightweight, zero-install portable Windows application that turns any folder into a functional web server for remote file access. It’s designed for situations where
+  you need to share files across devices (e.g., PC to Phone) instantly without messing with complex network permissions or cloud services.
 
-**WEFREE** is a lightweight, portable Windows application that turns any folder into a secure, encrypted web server for remote file access. 
+  ---
 
-## Key Features
-- **Portable**: Run it from any folder as a single `.exe` file without installation.
-- **Secure**: Forced HTTPS/SSL encryption for all data transfers.
-- **Protected**: Mandatory password authentication to access your files.
-- **File Management**: 
-    - Browse files and directories.
-    - Download files.
-    - Upload files directly to the server.
-- **Safe**: Built-in protection against Directory Traversal attacks.
+  🌟 Key Features
 
-## How to Use
-1.  Place `WEFREE.exe` into the folder you want to share.
-2.  Run `WEFREE.exe`.
-3.  On the first run, it will automatically:
-    - Create a `config.json` file.
-    - Generate self-signed SSL certificates in the `certs/` folder.
-    - Start the server on port `5000` with the default password: `admin123`.
 
-## Accessing the Server
-- Open your browser and go to: `https://localhost:5000` (or use your computer's local IP address).
-- **Security Warning**: Since the app uses a self-signed certificate, your browser will show a "Your connection is not private" warning. 
-    - Click **Advanced** -> **Proceed to localhost (unsafe)**.
-- Log in using the password from `config.json` (Default: `admin123`).
+   - Zero-Install Portability: Run as a single .exe file from any directory. No installation required.
+   - Desktop GUI Control: A new configuration window allows you to set the password, port, and network binding before launching the server.
+   - System Tray Integration: Once started, the server minimizes to the tray, keeping your taskbar clean.
+   - Multi-Language Support: Choose between English (Default) and Russian interfaces.
+   - Flexible Connectivity (SSL Toggle):
+       * HTTPS Mode: Forced encryption for secure transfers.
+       * HTTP Mode: Maximum compatibility mode to avoid blocks by aggressive antivirus/firewall software.
+   - Full File Management:
+       * Browse files and directories.
+       * Upload files directly to the server.
+       * Download files (optimized for Chrome).
+       * Rename and Delete items via the web interface.
+   - Secure by Design: Built-in protection against Directory Traversal attacks.
 
-## Configuration
-Open `config.json` to customize the following settings:
-- `password_hash`: Securely stored password.
-- `port`: The port the server runs on (Default: 5000).
-- `allow_uploads`: Set to `true` or `false`.
+  ---
 
-## Remote Access (Over the Internet)
-To access your files from outside your local network:
-1.  **Port Forwarding**: Configure your router to forward port `5000` to your computer's local IP.
-2.  **Tunneling Services**: Use tools like [ngrok](https://ngrok.com/) or [Tailscale](https://tailscale.com/) if you don't have access to router settings.
+  🚀 How to Use
 
-## Build from Source
-If you want to build the executable yourself:
-1.  Install Python 3.10+.
-2.  Install dependencies: `pip install -r requirements.txt`.
-3.  Install PyInstaller: `pip install pyinstaller`.
-4.  Run the build script: `python build.py`.
-5.  Find your app in the `dist/` directory.
 
-## License
-Distributed under the MIT License. See `LICENSE` for more information.
+   1. Place WEFREE.exe into the folder you want to share.
+   2. Run the executable.
+   3. In the Settings Window:
+       * Set your access password (default: admin123).
+       * Select your preferred Language and Connection Mode (HTTP/HTTPS).
+       * Note your Local IP displayed in the window.
+   4. Click Start Server. The app will minimize to the system tray.
+   5. Open your browser on any device in the same network and enter the address provided (e.g., http://192.168.1.15:9999).
+
+  ---
+
+  🛠 Tech Stack
+
+
+   - Backend: Flask (https://flask.palletsprojects.com/) (Python Web Framework).
+   - Frontend: Bootstrap 5 & Bootstrap Icons.
+   - GUI: PySide6 (https://doc.qt.io/qtforpython-6/) (Qt for Python).
+   - Security: Werkzeug (Password hashing) & pyOpenSSL.
+   - Packaging: PyInstaller (https://pyinstaller.org/).
+
+  ---
+
+  🏗 Build from Source
+
+  If you want to modify the code or build the executable yourself:
+
+   1. Requirements: Python 3.10 or higher.
+   2. Install dependencies:
+
+
+   1     pip install -r requirements.txt
+   3. Run the build script:
+   1     python build.py
+   4. Find your portable executable in the dist/ directory.
+
+  ---
+
+  ⚠️ Troubleshooting (Connectivity)
+
+
+  If you cannot reach the server from your browser:
+   1. Check the Port: The default port is 9999. Ensure no other service is using it.
+   2. Antivirus/Firewall: Some antivirus software (like Avast or AVG) may block local ports. Try switching to "HTTP (Disable SSL)" in the settings or add WEFREE.exe to your
+      antivirus exclusions.
+   3. View Logs: Click the "View Server Log" button in the settings window to see real-time server activity.
+
+  ---
+
+  📜 License
+
+
+  Distributed under the MIT License. See LICENSE for more information.
