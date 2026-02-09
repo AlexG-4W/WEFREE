@@ -1,10 +1,6 @@
  WEFREE - Portable Secure File Server
 
 
-  !License (https://img.shields.io/badge/license-MIT-blue.svg)
-  !Python (https://img.shields.io/badge/python-3.10%2B-blue.svg)
-  !Platform (https://img.shields.io/badge/platform-windows-lightgrey.svg)
-
 
   WEFREE is a lightweight, zero-install portable Windows application that turns any folder into a functional web server for remote file access. It’s designed for situations where
   you need to share files across devices (e.g., PC to Phone) instantly without messing with complex network permissions or cloud services.
